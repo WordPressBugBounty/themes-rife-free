@@ -70,7 +70,7 @@ class Apollo13Framework
         define('A13FRAMEWORK_THEME_ID_NUMBER', '66');
         define('A13FRAMEWORK_OPTIONS_NAME', 'apollo13_option_rife');
         define('A13FRAMEWORK_CACHE', 'apollo13_rife_cache');
-        define('A13FRAMEWORK_THEME_VERSION', '2.4.21');
+        define('A13FRAMEWORK_THEME_VERSION', '2.4.24');
         define('A13FRAMEWORK_THEME_VER', A13FRAMEWORK_THEME_VERSION ); //legacy - do not use
         define('A13FRAMEWORK_MIN_COMPANION_VERSION', '1.9.3');
         define('A13FRAMEWORK_MIN_PHP_VERSION', '5.3');

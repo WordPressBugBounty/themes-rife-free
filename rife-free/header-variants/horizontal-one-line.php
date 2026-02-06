@@ -27,8 +27,10 @@ $header_classes .= ' '.$apollo13framework_a13->get_option( 'header_horizontal_st
 
 //hide until it is scrolled to
 $show_header_at = $apollo13framework_a13->get_meta('_horizontal_header_show_header_at' );
-if(strlen($show_header_at) && $show_header_at > 0){
-	$header_classes .= ' hide-until-scrolled-to';
+if($show_header_at){
+    if(strlen($show_header_at) && $show_header_at > 0){
+        $header_classes .= ' hide-until-scrolled-to';
+    }
 }
 
 ?>

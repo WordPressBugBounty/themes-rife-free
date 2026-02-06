@@ -159,11 +159,30 @@ if(!function_exists('apollo13framework_js_parameters')){
         $allow_mobile_menu = $apollo13framework_a13->get_option( 'header_type' ) === 'vertical'
                              || ($apollo13framework_a13->get_option( 'header_main_menu' ) === 'on' && $apollo13framework_a13->get_option( 'menu_allow_mobile_menu' ) !== 'off');
 
+        $site_url = trailingslashit( site_url() );
+
+        $header_socials_color             = $apollo13framework_a13->get_option( 'header_socials_color' );
+        $header_socials_color_hover       = $apollo13framework_a13->get_option( 'header_socials_color_hover' );
+        $top_bar_socials_color            = $apollo13framework_a13->get_option( 'top_bar_socials_color' );
+        $top_bar_socials_color_hover      = $apollo13framework_a13->get_option( 'top_bar_socials_color_hover' );
+        $header_light_socials_color       = $apollo13framework_a13->get_option( 'header_light_socials_color' );
+        $header_light_socials_color_hover = $apollo13framework_a13->get_option( 'header_light_socials_color_hover' );
+        $header_light_top_bar_socials_color       = $apollo13framework_a13->get_option( 'header_light_top_bar_socials_color' );
+        $header_light_top_bar_socials_color_hover = $apollo13framework_a13->get_option( 'header_light_top_bar_socials_color_hover' );
+        $header_dark_socials_color        = $apollo13framework_a13->get_option( 'header_dark_socials_color' );
+        $header_dark_socials_color_hover  = $apollo13framework_a13->get_option( 'header_dark_socials_color_hover' );
+        $header_dark_top_bar_socials_color       = $apollo13framework_a13->get_option( 'header_dark_top_bar_socials_color' );
+        $header_dark_top_bar_socials_color_hover = $apollo13framework_a13->get_option( 'header_dark_top_bar_socials_color_hover' );
+        $header_sticky_socials_color            = $apollo13framework_a13->get_option( 'header_sticky_socials_color' );
+        $header_sticky_socials_color_hover      = $apollo13framework_a13->get_option( 'header_sticky_socials_color_hover' );
+        $header_sticky_top_bar_socials_color       = $apollo13framework_a13->get_option( 'header_sticky_top_bar_socials_color' );
+        $header_sticky_top_bar_socials_color_hover = $apollo13framework_a13->get_option( 'header_sticky_top_bar_socials_color_hover' );
+
         $params = array(
             /* GLOBAL OPTIONS */
-            'ajaxurl'                   => admin_url('admin-ajax.php'),
-            'site_url'                  => site_url().'/',
-            'defimgurl'                 => get_theme_file_uri( 'images/holders/photo.png'),
+            'ajaxurl'                   => esc_url( admin_url( 'admin-ajax.php' ) ),
+            'site_url'                  => esc_url( $site_url ),
+            'defimgurl'                 => esc_url( get_theme_file_uri( 'images/holders/photo.png' ) ),
             'options_name'              => A13FRAMEWORK_OPTIONS_NAME,
 
 	        /* MISC */
@@ -182,25 +201,26 @@ if(!function_exists('apollo13framework_js_parameters')){
             'show_header_at'            => $apollo13framework_a13->get_meta('_horizontal_header_show_header_at' ),
 
             /* HORIZONTAL HEADER VARIANTS */
-            'header_normal_social_colors' => $apollo13framework_a13->get_option( 'header_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_socials_color_hover' ).'_hover'.
-                                            '|'.$apollo13framework_a13->get_option( 'top_bar_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'top_bar_socials_color_hover' ).'_hover',
+            'header_normal_social_colors' => $header_socials_color .
+                '|' . $header_socials_color_hover . '_hover' .
+                '|' . $top_bar_socials_color .
+                '|' . $top_bar_socials_color_hover . '_hover',
 
-            'header_light_social_colors' => $apollo13framework_a13->get_option( 'header_light_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_light_socials_color_hover' ).'_hover'.
-                                            '|'.$apollo13framework_a13->get_option( 'header_light_top_bar_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_light_top_bar_socials_color_hover' ).'_hover',
+            'header_light_social_colors' => $header_light_socials_color .
+                '|' . $header_light_socials_color_hover . '_hover' .
+                '|' . $header_light_top_bar_socials_color .
+                '|' . $header_light_top_bar_socials_color_hover . '_hover',
 
-            'header_dark_social_colors' => $apollo13framework_a13->get_option( 'header_dark_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_dark_socials_color_hover' ).'_hover'.
-                                            '|'.$apollo13framework_a13->get_option( 'header_dark_top_bar_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_dark_top_bar_socials_color_hover' ).'_hover',
+            'header_dark_social_colors' => $header_dark_socials_color .
+                '|' . $header_dark_socials_color_hover . '_hover' .
+                '|' . $header_dark_top_bar_socials_color .
+                '|' . $header_dark_top_bar_socials_color_hover . '_hover',
 
-            'header_sticky_social_colors' => $apollo13framework_a13->get_option( 'header_sticky_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_sticky_socials_color_hover' ).'_hover'.
-                                            '|'.$apollo13framework_a13->get_option( 'header_sticky_top_bar_socials_color' ).
-                                            '|'.$apollo13framework_a13->get_option( 'header_sticky_top_bar_socials_color_hover' ).'_hover',
+            'header_sticky_social_colors' => $header_sticky_socials_color .
+                '|' . $header_sticky_socials_color_hover . '_hover' .
+                '|' . $header_sticky_top_bar_socials_color .
+                '|' . $header_sticky_top_bar_socials_color_hover . '_hover',
+
             /* MENU */
             'close_mobile_menu_on_click' => $apollo13framework_a13->get_option( 'menu_close_mobile_menu_on_click' ) === 'on',
             'menu_overlay_on_click'      => $apollo13framework_a13->get_option( 'header_menu_overlay_on_click', 'off' ) === 'on',

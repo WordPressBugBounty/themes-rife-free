@@ -3462,6 +3462,8 @@ jQuery.noConflict();
 						addLoadMoreButton();
 						$('div.load-more-button').on(click_event, loadMoreClick);
 					}
+
+					setTimeout( function(){$container.isotope('layout');}, 500 );
 				}
 			},
 

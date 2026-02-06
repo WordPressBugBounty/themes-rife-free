@@ -3,6 +3,28 @@ Change log is for all themes build on Apollo13 Framework.
 Not all bundled plugins may be included in every theme, however every theme will have build in support for those plugins.
 What plugins are included with your theme can be found in feature list of theme that you are using.
 Thanks!
+----------------
+= 2.4.24(18.02.2026)
+
+Fixed:
+- come extra conditions for code stability
+- normalized localized URLs passed to scripts to avoid unexpected double slashes
+
+Improved:
+- reduced repeated option lookups when building header social color parameters
+
+
+----------------
+= 2.4.23(2.12.2025)
+
+Fixed:
+- hardcoded custom functions
+
+----------------
+= 2.4.22(20.11.2025)
+
+Fixed:
+- Masonry layout sometimes get stuck
 
 ----------------
 = 2.4.21(27.05.2024)
